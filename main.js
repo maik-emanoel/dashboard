@@ -4,6 +4,9 @@ const value1 = document.querySelector('.card:nth-child(2) .circular-progress .va
 const circularProgress2 = document.querySelector('.card:nth-child(3) .circular-progress')
 const value2 = document.querySelector('.card:nth-child(3) .circular-progress .value')
 
+const toggleTheme = document.querySelector('.toggle')
+const body = document.querySelector('body')
+
 let number = 0
 let valueEnd = 70
 let secondValueEnd = 90
@@ -41,3 +44,9 @@ setTimeout(() => {
     }, speed)
     
 }, 1000)
+
+
+toggleTheme.addEventListener('click', function changeTheme() {
+    body.classList.toggle('light')
+    document.querySelector('.ball').classList.toggle('light')
+})

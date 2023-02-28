@@ -10,12 +10,24 @@
     --bg-color:#292738;
     --card-bg-color:#363447;
     --font-color: #ffffff;
+    --ball-bg-color: #F9F9F9;
+    --span-color: #81FBB8;
+    --graph-line-bg-color: #4A4556;
     --graph-column-bg: linear-gradient(180deg, #90F7EC 0%, #32CCBC 100%);
 
     font-family: 'Inter', sans-serif;
     font-size: 62.5%;
 
     -webkit-tap-highlight-color: transparent;
+}
+
+.light {
+    --bg-color:#DDDDDD;
+    --card-bg-color:#EEEEEE;
+    --font-color: #000;
+    --ball-bg-color: #BDCDD6;
+    --span-color: #2eac66;
+    --graph-line-bg-color: #4a455658;
 }
 
 body {
@@ -52,6 +64,8 @@ span.day {
 
     padding: 11.2rem 0;
     margin: 0 auto;
+
+    position: relative;
 }
 
 #cards {
@@ -117,7 +131,7 @@ span.day {
     line-height: 160%;
 
     margin-top: 1.6rem;
-    color: #81FBB8;
+    color: var(--span-color);
 }
 
 .card .bottom {
@@ -196,7 +210,7 @@ span.day {
     font-weight: 700;
     font-size: 3.4rem;
 
-    color: white;
+    color: var(--font-color);
 }
 
 .value-container p {
@@ -269,7 +283,7 @@ span.day {
     height: 3px;
 
     border-radius: 50%;
-    background: #4A4556;
+    background: var(--graph-line-bg-color);
 }
 
 #sales .content .graph div {
@@ -318,10 +332,58 @@ span.day {
     height: 6.9rem;
 }
 
+/* ================== toggle theme =============== */
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 5rem;
+  
+    width: 7rem;
+    height: 3rem;
+    background: var(--card-bg-color);
+  
+    position: relative;
+    top: -2rem;
+    cursor: pointer;
+
+    margin: 0 0 0 auto;
+  }
+  
+  .toggle img:nth-child(1) {
+    position: absolute;
+    left: .7rem;
+    width: 2rem;
+  }
+  
+  .toggle img:nth-child(2) {
+    position: absolute;
+    right: .7rem;
+    width: 2rem;
+  }
+  
+  .toggle .ball {
+    width: 2rem;
+    height: 2rem;
+  
+    position: absolute;
+    left: .7rem;
+  
+    background: var(--ball-bg-color);
+    border-radius: 50%;
+  
+    transition: .4s ease-in-out;
+  }
+
+  .toggle .ball.light {
+    left: 4.3rem;
+  }
+
 /* ================== animations ================= */
 @keyframes fromRight {
     from {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
         opacity: 0;
     }
     to {
@@ -332,7 +394,7 @@ span.day {
 
 /* ================= scrollbar ====================== */
 body::-webkit-scrollbar{
-    width: 10px;
+    width: 1rem;
   }
   
   body::-webkit-scrollbar-track{
@@ -341,7 +403,7 @@ body::-webkit-scrollbar{
   
   body::-webkit-scrollbar-thumb {
     background: var(--card-bg-color);
-    border-radius: 6px;
+    border-radius: .6rem;
   }
 
 /* ================ responsivity =================== */
