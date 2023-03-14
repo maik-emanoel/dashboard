@@ -182,13 +182,11 @@ span.day {
     display: grid;
     place-items: center;
 
-    background: conic-gradient(#7367F0 180deg,  #D9D9D9 180deg);
-
-    animation: increaseCircularProgress .7s backwards;
+    background: conic-gradient(#7367F0 0deg,  #D9D9D9 0deg);
 }
 
 .card:nth-child(3) .circular-progress {
-    background: conic-gradient(#A66DE9 100deg,  #D9D9D9 100deg)
+    background: conic-gradient(#A66DE9 0deg,  #D9D9D9 0deg)
 }
 
 .circular-progress::before {
